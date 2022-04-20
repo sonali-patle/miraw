@@ -1,0 +1,18 @@
+<%= form_for(@order, url: save_address_orders_path) do |f| %>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <% @addresses.each do |address| %>
+        <div class="col col-md-3 margin-bottom-15">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <%= f.radio_button :address_id, address.id  %>
+                <h5 class="card-title"><%= address.address_line_1 %></h5>
+                <h6 class="card-subtitle mb-2 text-muted"><%= address.address_line_2 %></h6>
+                <p class="card-text"><%= address.city %></p>
+            </div>
+        </div>
+        </div>
+      <% end %>
+    </div>
+    <br />
+    <%= f.submit "Proceed to payment", class: 'btn btn-primary' %>
+<% end %>

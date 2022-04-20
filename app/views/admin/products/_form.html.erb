@@ -1,0 +1,23 @@
+  <div class="mb-3">
+    <%= f.label :title, class: 'form-label' %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :description, class: 'form-label' %>
+    <%= f.text_area :description, class: 'form-control', placeholder: 'Enter product description here...' %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :image_url, class: 'form-label' %>
+    <%= f.file_field :image_url, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :price, class: 'form-label' %>
+    <%= f.text_field :price, class: 'form-control', placeholder: 'Enter product per item price', required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :date_available, class: 'form-label' %>
+    <%= f.datetime_field :date_available, class: 'form-control' %>
+  </div>

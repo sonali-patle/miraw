@@ -1,0 +1,15 @@
+<div class="row">
+  <% @addresses.each do |address| %>
+    <div class="col col-md-3 margin-bottom-15">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= address.address_line_1 %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= address.address_line_2 %></h6>
+          <p class="card-text"><%= address.city %></p>
+          <a href="<%= edit_address_path(address) %>" class="card-link">Edit</a>
+          <%= link_to "Delete", address_path(address), method: :delete, data: { confirm: "Are you sure?" }, class: "card-link" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,24 @@
+<h2> Products </h2>
+</br>
+</br>
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col">
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="<%= product.image_url %>" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><%= product.title %></h5>
+              <p class="card-text"><small class="text-muted"><%= product.description %></small></p>
+              <p class="card-text"><%= product.price %></p>
+              <%= link_to 'Add to cart', items_path(product_id: product.id), method: :post, class: "cart-link" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

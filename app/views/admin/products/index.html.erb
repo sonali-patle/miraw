@@ -1,0 +1,32 @@
+<%= link_to "Create new  product", new_admin_product_path, class: "card-link" %>
+</br>
+</br>
+
+
+<table class="table table-striped">
+  <h4> Listing Products </h4>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Image Url</th>
+      <th scope="col">Price</th>
+      <th scope="col">Date available</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each.with_index(1) do |product, index| %>
+    <tr>
+      <th scope="row"><%= index %></th>
+      <td><%= product.title%></td>
+      <td><%= product.description%></td>
+      <td><%= product.image_url%></td>
+      <td><%= product.price%></td>
+      <td><%= product.date_available%></td>
+      <td><%= link_to 'Edit', edit_admin_product_path(product) %> | <%= link_to 'Show', admin_product_path(product) %> | <%= link_to 'Delete', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

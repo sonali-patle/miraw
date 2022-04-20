@@ -1,0 +1,10 @@
+<%= form_for(@address) do |f| %>
+
+  <%= render partial: "form", locals: { f: f } %>
+
+  <div class="mb-3">
+    <%= f.submit 'Create Address', class: 'btn btn-primary' %>
+  </div>
+
+<% end %>
+

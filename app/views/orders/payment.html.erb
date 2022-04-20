@@ -1,0 +1,16 @@
+<div class="row gap-5">
+    <%= form_for(@order, url: confirm_orders_path) do |f| %>
+      <div class="card-body">
+        <%= f.radio_button :payment_type, "cash_on_delivery", checked: true %>
+        <h5 class="card-title">Cash on delivery</h5>
+      </div>
+
+      <div class="card-body">
+        <%= f.radio_button :payment_type, "online_payment" %>
+        <h5 class="card-title">Online payment</h5>
+      </div>
+      <div class="mb-3">
+        <%= f.submit "Confirm Payment", class: 'btn btn-primary'%>
+      </div>
+    <% end %>
+</div>
